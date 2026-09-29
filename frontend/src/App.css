@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f3f5f0;
+  --surface: #ffffff;
+  --ink: #1f2a24;
+  --ink-soft: #5c675f;
+  --primary: #2f6f4e;
+  --primary-dark: #22523a;
+  --accent: #c9a227;
+  --border: #e1e3d9;
+  --danger: #b3452f;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+h1, h2 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- Shell ---------- */
+
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.app-header {
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 34px;
+  color: var(--primary-dark);
+}
+
+.app-subtitle {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Form panel ---------- */
+
+.form-panel {
+  position: sticky;
+  top: 24px;
+}
+
+.student-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.student-form h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: var(--primary-dark);
+}
+
+.student-form input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background: var(--bg);
+}
+
+.student-form input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+  background: var(--surface);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.student-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.student-form button[type="submit"] {
+  background: var(--primary);
+  color: white;
+  flex: 1;
+}
+
+.student-form button[type="submit"]:hover {
+  background: var(--primary-dark);
+}
+
+.form-buttons button[type="button"] {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--border);
+}
+
+.error-text {
+  background: #fbeae5;
+  color: var(--danger);
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ---------- Table panel ---------- */
+
+.table-panel-header {
+  margin-bottom: 12px;
+}
+
+.student-count {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.student-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: #eef1ea;
+}
+
+.student-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.student-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-table tr:hover td {
+  background: #f8f9f6;
+}
+
+.student-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.student-name {
+  font-weight: 500;
+}
+
+.student-email {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.semester-pill {
+  display: inline-block;
+  background: #f4ecd2;
+  color: #8a6d17;
+  border: 1px solid #e8d9a3;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+.btn-danger:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* ---------- Empty state ---------- */
+
+.empty-state {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.empty-state-title {
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.empty-state-text {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
